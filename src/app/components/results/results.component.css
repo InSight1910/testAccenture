@@ -1,0 +1,11 @@
+.grid {
+	display: grid;
+	height: 800px;
+}
+.column {
+	grid-template-columns: 2fr 3fr;
+}
+.user_image {
+	width: 280px;
+	height: 280px;
+}

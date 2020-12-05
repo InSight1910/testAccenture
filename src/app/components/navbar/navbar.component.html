@@ -1,0 +1,14 @@
+<div class="grid">
+	<div class="column" style="width: 375px; height: 75px">
+		<h1><span>Github</span> Search</h1>
+	</div>
+	<div class="column">
+		<form action="" class="grid_search">
+			<label for="search"></label>
+			<input type="text" name="search" class="search-text" #Search />
+			<button type="button" (click)="onSubmit(Search.value)">
+				<img src="../../../assets/Search Icon.svg" alt="" />
+			</button>
+		</form>
+	</div>
+</div>

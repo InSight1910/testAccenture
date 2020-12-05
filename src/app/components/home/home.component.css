@@ -1,0 +1,49 @@
+.grid_title {
+	display: grid;
+}
+.row {
+	grid-template-rows: 1fr 1fr;
+}
+div.row form {
+	margin-bottom: 10rem;
+}
+h1 {
+	text-align: center;
+	font-size: 60px;
+	margin: 244px 369px 0 368px;
+	font-family: Raleway;
+	font-weight: 200;
+	font-style: italic;
+}
+.grid_search {
+	display: grid;
+	grid-template-columns: 1fr 3fr 0.5fr 1fr;
+}
+input {
+	width: 650px;
+	height: 43px;
+	margin-left: 6rem;
+}
+button {
+	width: 100px;
+	height: 50px;
+	margin-right: 2rem;
+	padding: 10px 35px 9.9px 35px;
+	border-radius: 2px;
+	background-color: #ac53f2;
+	border: none;
+}
+img {
+	width: 30px;
+	height: 30px;
+}
+span {
+	font-family: Monaco;
+	font-size: 60px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #000000;
+}
