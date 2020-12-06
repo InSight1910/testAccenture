@@ -8,8 +8,8 @@
 	<div class="row">
 		<form action="" class="grid_search">
 			<div class=""></div>
-			<input type="text" />
-			<button>
+			<input type="text" class="search-text" #search />
+			<button type="text" (click)="onSubmit(search.value)">
 				<img src="../../../assets/Search Icon.svg" alt="" />
 			</button>
 			<div class=""></div>

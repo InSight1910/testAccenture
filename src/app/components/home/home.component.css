@@ -47,3 +47,15 @@ span {
 	letter-spacing: normal;
 	color: #000000;
 }
+
+.search-text {
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #5c5c5c;
+	padding: 0 0 0 10px;
+}

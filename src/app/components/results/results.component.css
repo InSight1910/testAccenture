@@ -1,11 +1,171 @@
+:root {
+	--white: #ffffff;
+
+	--black-40: rgba(0, 0, 0, 0.4);
+}
+li {
+	list-style: none;
+}
 .grid {
 	display: grid;
-	height: 800px;
 }
 .column {
-	grid-template-columns: 2fr 3fr;
+	display: grid;
+	grid-template-columns: 2fr 4fr;
+	padding: 0;
 }
-.user_image {
+
+.organization-icon {
+	width: 24px;
+	height: 24px;
+	margin: 5px 8px -4px -15px;
+}
+.organization-name {
+	width: 240px;
+	height: 22px;
+	margin: 33px 76px 12px 7px;
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #5c5c5c;
+}
+.location-icon {
+	width: 24px;
+	height: 24px;
+	margin: 5px 8px -4px -15px;
+}
+.location-name {
+	width: 240px;
+	height: 22px;
+	margin: 14px 76px 13px 7px;
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #5c5c5c;
+}
+.star-icon {
+	width: 24px;
+	height: 24px;
+	margin: 5px 8px -4px -15px;
+}
+.star-count {
+	width: 240px;
+	height: 22px;
+	margin: 2.7px 76px 13px 7px;
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #5c5c5c;
+}
+.repositories-icon {
+	width: 24px;
+	height: 24px;
+	margin: 5px 8px -4px -15px;
+}
+.repositories-count {
+	width: 240px;
+	height: 22px;
+	margin: 4px 76px 14px 7px;
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #5c5c5c;
+}
+.followers {
+	width: 24px;
+	height: 24px;
+	margin: 5px 8px -4px -15px;
+}
+.followers-count {
+	width: 240px;
+	height: 22px;
+	margin: 12px 76px 22.8px 7px;
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #5c5c5c;
+}
+.user-avatar {
 	width: 280px;
 	height: 280px;
+	margin: 0 0 0 25px;
+	border-radius: 2px;
+	box-shadow: 0 0 4px NaNpx var(--black-40);
+}
+.user-name {
+	height: 40px;
+	margin: 12px 67px 0.5px 25px;
+	font-family: Raleway;
+	font-size: 35px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #000000;
+}
+.user-login {
+	width: 280px;
+	height: 25px;
+	margin: 7px 67px 28px 25px;
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #5c5c5c;
+}
+.star-repos {
+	padding: 0 0 0 85px;
+}
+
+.repo-name {
+	height: 40.8px;
+	margin: 44px 269.5px 0 72px;
+	font-family: Raleway;
+	font-size: 35px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #ac53f2;
+}
+.repo-description {
+	width: 600px;
+	height: 25.5px;
+	margin: 8px 45px 9.2px 72px;
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 300;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #000000;
+}
+.user-column {
+	padding: 50px 0 0 0;
 }
