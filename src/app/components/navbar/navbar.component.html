@@ -5,7 +5,10 @@
 		</h1>
 	</div>
 	<div class="column">
-		<form action="" class="grid_search">
+		<form
+			class="grid_search"
+			(submit)="onSubmit(Search.value); Search.value = ''"
+		>
 			<input
 				type="text"
 				name="search"
@@ -14,7 +17,7 @@
 				#Search
 				autofocus
 			/>
-			<button type="button" (click)="onSubmit(Search.value)" class="btn">
+			<button type="button" class="btn">
 				<img
 					src="../../../assets/Search Icon.svg"
 					alt=""

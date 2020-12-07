@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GitHubService } from 'src/app/services/git-hub.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
 	selector: 'app-results',
@@ -8,15 +8,15 @@ import { ActivatedRoute } from '@angular/router';
 	styleUrls: ['./results.component.css'],
 })
 export class ResultsComponent implements OnInit {
-	avatar = this.getUser()['avatar_url'];
-	link_user = this.getUser()['html_url'];
-	name = this.getUser()['name'];
-	login = this.getUser()['login'];
-	company = this.getUser()['company'] || 'Compañia';
-	location = this.getUser()['location'] || 'Ubicacion';
-	star = this.getUser()['star'] || 0;
-	public_repos = this.getUser()['public_repos'] || 0;
-	followers = this.getUser()['followers'] || 0;
+	avatar: string = '';
+	link_user: string = '';
+	name: string = '';
+	login: string = '';
+	company: string = '';
+	location: string = '';
+	star: string = '';
+	public_repos: string = '';
+	followers: string = '';
 	username = '';
 	repositoriesList: {
 		name: any;
@@ -27,16 +27,35 @@ export class ResultsComponent implements OnInit {
 
 	constructor(
 		private service: GitHubService,
+		private router: Router,
 		private actRouter: ActivatedRoute
-	) {
-		this.username = this.actRouter.snapshot.params.username;
-	}
+	) {}
 	ngOnInit(): void {
-		this.getRepos();
+		this.actRouter.paramMap.subscribe((params: ParamMap) => {
+			this.username = params.get('username') || '';
+			this.getUser();
+			this.getRepos();
+		});
 	}
 	getUser() {
-		let user: any = JSON.parse(localStorage.getItem('user') || '');
-		return user;
+		let user1;
+		this.service.getData(this.username, '').subscribe(
+			(user) => {
+				user1 = this.createObjectUser(user)[0];
+				this.avatar = user1['avatar_url'];
+				this.link_user = user1['html_url'];
+				this.name = user1['name'];
+				this.login = user1['login'];
+				this.company = user1['company'] || 'Compañia';
+				this.location = user1['location'] || 'Ubicacion';
+				this.star = user1['star'] || 0;
+				this.public_repos = user1['public_repos'] || 0;
+				this.followers = user1['followers'] || 0;
+			},
+			(error) => {
+				this.router.navigate(['notFound']);
+			}
+		);
 	}
 	getRepos() {
 		this.service.getData(this.username, '/repos').subscribe(
@@ -84,5 +103,31 @@ export class ResultsComponent implements OnInit {
 			}
 		);
 		return repositories;
+	}
+	createObjectUser(user: {
+		avatar_url: any;
+		html_url: any;
+		name: any;
+		login: any;
+		company: any;
+		location: any;
+		star: any;
+		public_repos: any;
+		followers: any;
+	}) {
+		let User = [];
+		let UserObject = {
+			avatar_url: user.avatar_url,
+			html_url: user.html_url,
+			name: user.name,
+			login: user.login,
+			company: user.company,
+			location: user.location,
+			star: user.star,
+			public_repos: user.public_repos,
+			followers: user.followers,
+		};
+		User.push(UserObject);
+		return User;
 	}
 }

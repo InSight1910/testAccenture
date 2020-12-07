@@ -8,8 +8,7 @@ import { GitHubService } from 'src/app/services/git-hub.service';
 	styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-	constructor(private service: GitHubService, private router: Router) {}
-
+	constructor(public service: GitHubService, private router: Router) {}
 	ngOnInit(): void {
 		localStorage.clear();
 	}

@@ -14,15 +14,7 @@ export class NavbarComponent implements OnInit {
 		localStorage.clear();
 	}
 	onSubmit(search: string) {
-		this.service.getData(search, '').subscribe(
-			(user) => {
-				localStorage.setItem('user', JSON.stringify(user));
-				this.router.navigate([`details/${search}`]);
-			},
-			(error) => {
-				this.router.navigate(['notFound']);
-			}
-		);
+		this.router.navigate([`details/${search}`]);
 	}
 	redirectHome() {
 		this.router.navigate(['']);

@@ -57,10 +57,10 @@
 			<ul>
 				<li
 					*ngFor="let repository of repositoriesList"
-					style="padding-bottom: 1rem"
+					style="padding-bottom: 2rem"
 				>
 					<p class="repository-name">
-						<a href="{{ repository.html_url }}">
+						<a href="{{ repository.html_url }}" target="_blank">
 							{{ repository.name }}
 						</a>
 					</p>
