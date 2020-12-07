@@ -1,19 +1,8 @@
-h1 {
+.title {
 	width: 315px;
 	height: 41px;
-	margin: 0 418px;
+	margin: 3rem 30rem;
 	font-family: Raleway;
 	font-size: 40px;
-	font-weight: normal;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
 	color: #ac53f2;
-}
-.NotFound {
-	width: 1152px;
-	height: 800px;
-	padding: 35px 27px 550px 25px;
-	background-color: var(--white);
 }

@@ -4,15 +4,14 @@ import { HomeComponent } from './components/home/home.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ResultsComponent } from './components/results/results.component';
 
-
 const routes: Routes = [
-  {path:'home', component: HomeComponent},
-  {path:'notFound', component: NotFoundComponent},
-  {path:'details', component: ResultsComponent}
+	{ path: '', component: HomeComponent },
+	{ path: 'notFound', component: NotFoundComponent },
+	{ path: 'details/:username', component: ResultsComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

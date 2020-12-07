@@ -1,13 +1,25 @@
 <div class="grid">
-	<div class="column" style="width: 375px; height: 75px">
-		<h1 (click)="redirectHome()"><span>Github</span> Search</h1>
+	<div class="column">
+		<h1 (click)="redirectHome()" class="title">
+			<span class="title-span">Github</span> Search
+		</h1>
 	</div>
 	<div class="column">
 		<form action="" class="grid_search">
-			<label for="search"></label>
-			<input type="text" name="search" class="search-text" #Search />
-			<button type="button" (click)="onSubmit(Search.value)">
-				<img src="../../../assets/Search Icon.svg" alt="" />
+			<input
+				type="text"
+				name="search"
+				class="input_search"
+				placeholder="Usuario"
+				#Search
+				autofocus
+			/>
+			<button type="button" (click)="onSubmit(Search.value)" class="btn">
+				<img
+					src="../../../assets/Search Icon.svg"
+					alt=""
+					class="loupe-icon"
+				/>
 			</button>
 		</form>
 	</div>

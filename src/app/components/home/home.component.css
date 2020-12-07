@@ -4,10 +4,10 @@
 .row {
 	grid-template-rows: 1fr 1fr;
 }
-div.row form {
+div.row .grid_search {
 	margin-bottom: 10rem;
 }
-h1 {
+.title {
 	text-align: center;
 	font-size: 60px;
 	margin: 244px 369px 0 368px;
@@ -15,29 +15,7 @@ h1 {
 	font-weight: 200;
 	font-style: italic;
 }
-.grid_search {
-	display: grid;
-	grid-template-columns: 1fr 3fr 0.5fr 1fr;
-}
-input {
-	width: 650px;
-	height: 43px;
-	margin-left: 6rem;
-}
-button {
-	width: 100px;
-	height: 50px;
-	margin-right: 2rem;
-	padding: 10px 35px 9.9px 35px;
-	border-radius: 2px;
-	background-color: #ac53f2;
-	border: none;
-}
-img {
-	width: 30px;
-	height: 30px;
-}
-span {
+.title_span {
 	font-family: Monaco;
 	font-size: 60px;
 	font-weight: normal;
@@ -47,15 +25,29 @@ span {
 	letter-spacing: normal;
 	color: #000000;
 }
-
-.search-text {
+.grid_search {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.input_search {
+	width: 650px;
+	height: 46px;
+	margin-left: 18rem;
+	margin-top: 0.5rem;
 	font-family: Raleway;
 	font-size: 20px;
-	font-weight: 300;
-	font-stretch: normal;
-	font-style: normal;
-	line-height: normal;
-	letter-spacing: normal;
-	color: #5c5c5c;
-	padding: 0 0 0 10px;
+	padding-left: 15px;
+}
+.btn {
+	width: 100px;
+	height: 50px;
+	padding: 10px 35px 9.9px 35px;
+	margin-top: 0.5rem;
+	border-radius: 2px;
+	background-color: #ac53f2;
+	border: none;
+}
+.loupe {
+	width: 30px;
+	height: 30px;
 }

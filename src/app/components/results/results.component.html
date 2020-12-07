@@ -1,15 +1,19 @@
 <app-navbar></app-navbar>
 <div class="grid">
 	<div class="column">
-		<div class="user-column">
-			<img src="{{ avatar }}" alt="" class="user-avatar" />
-			<h2 class="user-name">{{ name }}</h2>
+		<div class="">
+			<a href="{{ link_user }}">
+				<img src="{{ avatar }}" alt="" class="user-img" />
+			</a>
+			<a href="{{ link_user }}">
+				<h2 class="user-name">{{ name }}</h2>
+			</a>
 			<h3 class="user-login">{{ login }}</h3>
 			<ul>
-				<li class="organization-name">
+				<li class="company-name">
 					<img
 						src="../../../assets/organization icon.svg"
-						class="organization-icon"
+						class="company-icon"
 						alt=""
 					/>
 					{{ company }}
@@ -36,11 +40,11 @@
 						src="../../../assets/repositorie icon.svg"
 						alt=""
 					/>
-					{{ repos }}
+					{{ public_repos }}
 				</li>
 				<li class="followers-count">
 					<img
-						class="followers"
+						class="followers-icon"
 						src="../../../assets/followers icon.svg"
 						alt=""
 					/>
@@ -48,14 +52,23 @@
 				</li>
 			</ul>
 		</div>
-		<div class="">
+
+		<div>
 			<ul>
-				<li *ngFor="let rep of repss">
-					<p class="repo-name">
-						{{ rep.name }}
+				<li
+					*ngFor="let repository of repositoriesList"
+					style="padding-bottom: 1rem"
+				>
+					<p class="repository-name">
+						<a href="{{ repository.html_url }}">
+							{{ repository.name }}
+						</a>
 					</p>
-					<p class="repo-description" *ngIf="rep.description">
-						{{ rep.description }}
+					<p
+						class="repository-description"
+						*ngIf="repository.description"
+					>
+						{{ repository.description }}
 					</p>
 					<p class="star-repos star-count">
 						<img
@@ -64,7 +77,7 @@
 							class="star-icon"
 							style="padding-top: 25px"
 						/>
-						{{ rep.star }}
+						{{ repository.star }}
 					</p>
 				</li>
 			</ul>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GithubService } from 'src/app/services/github.service';
+import { GitHubService } from 'src/app/services/git-hub.service';
 
 @Component({
 	selector: 'app-home',
@@ -8,18 +8,16 @@ import { GithubService } from 'src/app/services/github.service';
 	styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-	constructor(private service: GithubService, private router: Router) {}
+	constructor(private service: GitHubService, private router: Router) {}
 
 	ngOnInit(): void {
 		localStorage.clear();
 	}
 	onSubmit(search: string) {
-		let username = search;
-		this.service.getUser(username).subscribe(
+		this.service.getData(search, '').subscribe(
 			(user) => {
 				localStorage.setItem('user', JSON.stringify(user));
-				localStorage.setItem('username', JSON.stringify(username));
-				this.router.navigate(['details']);
+				this.router.navigate(['details/' + search]);
 			},
 			(error) => {
 				this.router.navigate(['notFound']);

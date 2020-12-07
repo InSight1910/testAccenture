@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { GithubService } from '../../services/github.service';
+import { GitHubService } from '../../services/git-hub.service';
 
 @Component({
 	selector: 'app-navbar',
@@ -8,21 +8,16 @@ import { GithubService } from '../../services/github.service';
 	styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-	constructor(private service: GithubService, private router: Router) {}
+	constructor(private service: GitHubService, private router: Router) {}
 
 	ngOnInit(): void {
 		localStorage.clear();
 	}
 	onSubmit(search: string) {
-		let username = search;
-		this.service.getUser(username).subscribe(
+		this.service.getData(search, '').subscribe(
 			(user) => {
 				localStorage.setItem('user', JSON.stringify(user));
-				localStorage.setItem('username', JSON.stringify(username));
-				if (this.router.url.endsWith('details')) {
-					this.router.navigate(['details']);
-				}
-				this.router.navigate(['details']);
+				this.router.navigate([`details/${search}`]);
 			},
 			(error) => {
 				this.router.navigate(['notFound']);
@@ -30,6 +25,6 @@ export class NavbarComponent implements OnInit {
 		);
 	}
 	redirectHome() {
-		this.router.navigate(['home']);
+		this.router.navigate(['']);
 	}
 }
