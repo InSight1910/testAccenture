@@ -8,7 +8,7 @@ mediante la api de github https://api.github.com/users/
 ## Dependencias necesarias
 
 Tener instalado NodeJs.
-Tener instalado [Angular CLI] version 11.0.3.
+Tener instalado Angular CLI version 11.0.3.
 
 ## Como instalar la app
 
