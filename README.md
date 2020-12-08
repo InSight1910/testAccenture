@@ -1,27 +1,18 @@
-# TestAccenture
+# Instalar de forma esta aplicacion
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.3.
+Este proyecto fue creado con un framework de JavaScript llamado Angular el cual esta escrito en TypeScript,
+su funcion es la de buscar un usuario de GitHub y que se muestre en pantalla los datos de la persona y
+sus repositorios, con el nombre, descripcion y la cantidad de estrellas que estos tienen; todo esto se logro
+mediante la api de github https://api.github.com/users/
 
-## Development server
+## Dependencias necesarias
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Tener instalado NodeJs.
+Tener instalado [Angular CLI] version 11.0.3.
 
-## Code scaffolding
+## Como instalar la app
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1° Se tiene que clonar el repositorio
+2° Acceder a la carpeta clonada con "cd testAccenture"
+3° Luego corres el comando "npm install"
+4° Finalmente correr el comando "ng serve --open"
