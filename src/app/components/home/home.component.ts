@@ -9,18 +9,8 @@ import { GitHubService } from 'src/app/services/git-hub.service';
 })
 export class HomeComponent implements OnInit {
 	constructor(public service: GitHubService, private router: Router) {}
-	ngOnInit(): void {
-		localStorage.clear();
-	}
+	ngOnInit(): void {}
 	onSubmit(search: string) {
-		this.service.getData(search, '').subscribe(
-			(user) => {
-				localStorage.setItem('user', JSON.stringify(user));
-				this.router.navigate(['details/' + search]);
-			},
-			(error) => {
-				this.router.navigate(['notFound']);
-			}
-		);
+		this.router.navigate(['details/' + search]);
 	}
 }

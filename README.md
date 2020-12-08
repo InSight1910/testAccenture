@@ -16,3 +16,14 @@ Tener instalado Angular CLI version 11.0.3.
 2° Acceder a la carpeta clonada con "cd testAccenture"  
 3° Luego corres el comando "npm install"  
 4° Finalmente correr el comando "ng serve --open"
+
+## Link al proyecto subido en netlify
+
+https://stoic-nobel-90a6ef.netlify.app/
+https://github.com/InSight1910/testAccenture
+
+## URL del proyecto
+
+https://stoic-nobel-90a6ef.netlify.app/
+https://stoic-nobel-90a6ef.netlify.app/detail/<username>
+https://stoic-nobel-90a6ef.netlify.app/notFound

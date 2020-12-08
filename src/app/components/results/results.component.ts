@@ -38,7 +38,6 @@ export class ResultsComponent implements OnInit {
 		});
 	}
 	getUser() {
-		let user1;
 		this.service.getData(this.username, '').subscribe(
 			(user) => {
 				this.avatar = user['avatar_url'];
