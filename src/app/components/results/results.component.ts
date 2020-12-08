@@ -41,16 +41,15 @@ export class ResultsComponent implements OnInit {
 		let user1;
 		this.service.getData(this.username, '').subscribe(
 			(user) => {
-				user1 = this.createObjectUser(user)[0];
-				this.avatar = user1['avatar_url'];
-				this.link_user = user1['html_url'];
-				this.name = user1['name'];
-				this.login = user1['login'];
-				this.company = user1['company'] || 'Compañia';
-				this.location = user1['location'] || 'Ubicacion';
-				this.star = user1['star'] || 0;
-				this.public_repos = user1['public_repos'] || 0;
-				this.followers = user1['followers'] || 0;
+				this.avatar = user['avatar_url'];
+				this.link_user = user['html_url'];
+				this.name = user['name'];
+				this.login = user['login'];
+				this.company = user['company'];
+				this.location = user['location'];
+				this.star = user['star'] || 0;
+				this.public_repos = user['public_repos'] || 0;
+				this.followers = user['followers'] || 0;
 			},
 			(error) => {
 				this.router.navigate(['notFound']);
@@ -103,31 +102,5 @@ export class ResultsComponent implements OnInit {
 			}
 		);
 		return repositories;
-	}
-	createObjectUser(user: {
-		avatar_url: any;
-		html_url: any;
-		name: any;
-		login: any;
-		company: any;
-		location: any;
-		star: any;
-		public_repos: any;
-		followers: any;
-	}) {
-		let User = [];
-		let UserObject = {
-			avatar_url: user.avatar_url,
-			html_url: user.html_url,
-			name: user.name,
-			login: user.login,
-			company: user.company,
-			location: user.location,
-			star: user.star,
-			public_repos: user.public_repos,
-			followers: user.followers,
-		};
-		User.push(UserObject);
-		return User;
 	}
 }
