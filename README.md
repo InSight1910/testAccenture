@@ -12,7 +12,7 @@ Tener instalado Angular CLI version 11.0.3.
 
 ## Como instalar la app
 
-1° Se tiene que clonar el repositorio
-2° Acceder a la carpeta clonada con "cd testAccenture"
-3° Luego corres el comando "npm install"
+1° Se tiene que clonar el repositorio  
+2° Acceder a la carpeta clonada con "cd testAccenture"  
+3° Luego corres el comando "npm install"  
 4° Finalmente correr el comando "ng serve --open"
